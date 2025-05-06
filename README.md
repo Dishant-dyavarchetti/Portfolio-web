@@ -2,6 +2,8 @@
 
 A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS to showcase my skills, projects, and contact information.
 
+**Live Website**: [https://dishant-portfolio-web.netlify.app/](https://dishant-portfolio-web.netlify.app/)
+
 ## 🚀 Features
 
 - **Modern UI**: Clean, professional design with animations and transitions
@@ -55,7 +57,7 @@ A modern, responsive portfolio website built with React, TypeScript, and Tailwin
 
 ## 🚀 Deployment
 
-This site is built to be easily deployed to platforms like Vercel, Netlify, or GitHub Pages.
+This site is deployed on Netlify and can be accessed at [https://dishant-portfolio-web.netlify.app/](https://dishant-portfolio-web.netlify.app/).
 
 ## 📞 Contact
 
