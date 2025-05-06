@@ -40,7 +40,7 @@ const Navbar = () => {
   }, [nav]);
 
   return (
-    <div className={`fixed w-full h-[80px] flex justify-between items-center px-6 
+    <div className={`fixed w-[1250px] h-[80px] flex justify-between items-center px-6 
       ${scrolled ? 'bg-[#0a192f]/90 backdrop-blur-md shadow-lg' : 'bg-[#0a192f]'} 
       text-gray-300 z-50 transition-all duration-300`}>
       <div>
@@ -53,8 +53,8 @@ const Navbar = () => {
         </Link>
       </div>
 
-      {/* Menu - moved more to the left with proper spacing */}
-      <ul className="hidden md:flex space-x-1 flex-1 justify-center max-w-[600px] mx-auto">
+      {/* Menu - moved to the right side */}
+      <ul className="hidden md:flex space-x-1 justify-end ml-auto">
         {[
           { name: 'Home', path: '/' },
           { name: 'About', path: '/about' },
