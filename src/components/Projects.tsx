@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { FaGithub } from 'react-icons/fa';
-import { HiOutlineExternalLink } from 'react-icons/hi';
 
 const Projects = () => {
   const [isVisible, setIsVisible] = useState(false);
