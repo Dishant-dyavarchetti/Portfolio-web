@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaPython, FaDatabase, FaGitAlt, FaGithub } from 'react-icons/fa';
+import { FaHtml5, FaCss3Alt, FaJs, FaReact, FaGitAlt, FaGithub } from 'react-icons/fa';
 import { SiCplusplus, SiC, SiNextdotjs, SiFlask, SiMongodb, SiMysql, SiDjango, SiTypescript, SiTailwindcss, SiNodedotjs } from 'react-icons/si';
 
 const Skills = () => {
