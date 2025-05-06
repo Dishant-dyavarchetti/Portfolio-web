@@ -27,6 +27,18 @@ const Navbar = () => {
     setNav(false);
   }, [location]);
 
+  // Prevent body scrolling when mobile menu is open
+  useEffect(() => {
+    if (nav) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [nav]);
+
   return (
     <div className={`fixed w-full h-[80px] flex justify-between items-center px-6 
       ${scrolled ? 'bg-[#0a192f]/90 backdrop-blur-md shadow-lg' : 'bg-[#0a192f]'} 
@@ -65,15 +77,15 @@ const Navbar = () => {
       </ul>
 
       {/* Hamburger */}
-      <div onClick={handleClick} className="md:hidden z-10 cursor-pointer">
-        {!nav ? <FaBars size={25} /> : <FaTimes size={25} />}
+      <div onClick={handleClick} className="md:hidden z-50 cursor-pointer p-2">
+        {!nav ? <FaBars size={25} /> : <FaTimes size={25} className="text-[#64ffda]" />}
       </div>
 
       {/* Mobile Menu */}
       <div className={`fixed top-0 left-0 w-full h-screen bg-[#0a192f] flex flex-col justify-center items-center
-        transition-all duration-500 ease-in-out z-40
-        ${!nav ? 'opacity-0 pointer-events-none' : 'opacity-100'}`}>
-        <ul>
+        transition-all duration-300 ease-in-out z-40
+        ${!nav ? 'opacity-0 pointer-events-none translate-x-full' : 'opacity-100 translate-x-0'}`}>
+        <ul className="w-full text-center">
           {[
             { name: 'Home', path: '/' },
             { name: 'About', path: '/about' },
@@ -81,11 +93,13 @@ const Navbar = () => {
             { name: 'Projects', path: '/projects' },
             { name: 'Contact', path: '/contact' },
           ].map((item, index) => (
-            <li key={item.name} className={`py-6 text-4xl fade-in`} style={{ animationDelay: `${index * 0.1}s` }}>
+            <li key={item.name} 
+                className={`py-5 text-3xl fade-in border-b border-[#112240]`} 
+                style={{ animationDelay: `${index * 0.1}s` }}>
               <Link 
                 onClick={handleClick} 
                 to={item.path} 
-                className={`hover:text-[#64ffda] duration-300 
+                className={`w-full block py-2 hover:text-[#64ffda] duration-300 
                   ${location.pathname === item.path ? 'text-[#64ffda]' : 'text-gray-300'}`}
               >
                 {item.name}
